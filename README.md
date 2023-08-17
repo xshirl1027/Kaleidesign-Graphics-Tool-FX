@@ -21,6 +21,7 @@ todo:
 -eraser  
 -undo  
 -save  
--change number of segments
+-change number of segments  
+-fill area
 
 <img width="1401" alt="Screen Shot 2023-08-09 at 5 10 44 PM" src="https://github.com/xshirl1027/Kaleidesign-Visual-Pattern-Generator/assets/12800360/532be6f4-0353-4668-b93f-18fc05cdea3b">
