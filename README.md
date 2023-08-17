@@ -8,6 +8,9 @@ features:
 -mirror rotation  
 -color picker  
 -pen size picker  
+-undo  
+-save  
+-change number of segments
 
 <img width="565" alt="Screen Shot 2023-08-16 at 11 57 50 PM" src="https://github.com/xshirl1027/Kaleideign-Graphics-Tool-FX/assets/12800360/880c7694-a1ca-43ff-874d-8dda3fd6930b">
 
