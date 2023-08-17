@@ -4,7 +4,7 @@ update: recently upgraded to javafx for a more up-to-date graphics library
 this is a tool for making patterns. it can be used to create wallpapers, trippy patterns for t-shirts, or the background of an album cover or video game.  
 
 features:  
--basic rotation
+-basic rotation  
 -mirror rotation  
 -color picker  
 -pen size picker  
