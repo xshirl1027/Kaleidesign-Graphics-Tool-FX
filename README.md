@@ -18,7 +18,7 @@ todo:
 -switch between different patterns  
 -certain patterns that allow user to drop pictures onto the canvas  
 -create executable  
--eraser
+-eraser  
 -undo  
 -save  
 -change number of segments
