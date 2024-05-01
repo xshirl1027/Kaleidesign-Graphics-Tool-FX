@@ -165,7 +165,7 @@ public class PatternFX extends Application {
 		final GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
 		final Button resetButton = getResetButton(graphicsContext);
-		final Button mirrorButton = getMirrorButton(graphicsContext);
+		final Button mirrorButton = getMirrorButton();
 
 		// Set up the pen color chooser
 		ChoiceBox<String> colorChooser = getColorChooser(graphicsContext);
