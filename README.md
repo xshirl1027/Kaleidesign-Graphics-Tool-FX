@@ -2,7 +2,7 @@
 This is a tool written in JavaFx, using Object Oriented programming and the eclipse IDE for making patterns. it can be used to create wallpapers, trippy patterns for t-shirts, or the background of an album cover or video game.  
 
 how to run:
-<em>./mvnw compile exec:java -Dexec.mainClass="com.kaleideigngraphicstoolfx.PatternFX</em> from the main folder
+execute <em>./mvnw compile exec:java -Dexec.mainClass="com.kaleideigngraphicstoolfx.PatternFX</em> from the main folder
 
 features:  
 -basic rotation  
