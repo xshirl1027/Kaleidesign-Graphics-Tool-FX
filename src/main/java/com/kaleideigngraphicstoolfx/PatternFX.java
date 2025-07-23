@@ -116,11 +116,13 @@ public class PatternFX extends Application {
 			g.clearRect(0, 0, g.getCanvas().getWidth(),
 					g.getCanvas().getHeight());
 			g.fill();
+			g.setStroke(Color.BLACK);
+			g.setLineWidth(1);
 			g.strokeRect(0, // x of the upper left corner
 					0, // y of the upper left corner
 					width, // width of the rectangle
 					height); // height of the rectangle
-			int radius = (int) Math.ceil(Math.sqrt(center.x* center.x + center.y* center.y));
+			int radius = (int) Math.ceil(Math.sqrt(center.x * center.x + center.y * center.y));
 			Line l = new Line(center.x, center.y - radius, center.x, center.y);
 			utilsFX.rotateDraw(g, 6, l, center, false);
 

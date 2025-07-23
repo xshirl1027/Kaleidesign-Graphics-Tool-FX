@@ -75,6 +75,7 @@ public class utilsFX {
 
 
 	public static void rotateDraw(GraphicsContext g, int nseg, Line l, Point center, boolean mirrored){
+		g.save(); // Save the current graphics state
 		for(int i=0; i<=nseg; i++){
 			System.out.println(i);
 			g.translate(center.x, center.y);
@@ -88,7 +89,7 @@ public class utilsFX {
 			g.rotate(-i*360/nseg);
 			g.translate(-center.x, -center.y);
 		}
-		g.restore();
+		g.restore(); // Restore the saved graphics state
 	}
 	public static void rotateScaleDraw(Graphics2D g, int nseg, int x1, int y1, int x2, int y2, Point center, Color c, boolean ref, int initx, int inity, float scale, int num){
 		for(int i=0; i<=nseg; i++){
