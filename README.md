@@ -3,7 +3,7 @@ This is a tool written in JavaFx, it rotates what you draw around the canvas, cr
 
 instructions on how to run:  
 -check out the repository  
--go into target/patternFx/bin and double click patternFX or  
+-go into target/patternFx/bin and double click <em>patternFX</em> or  
 -run <em>./mvnw compile exec:java -Dexec.mainClass="com.kaleideigngraphicstoolfx.PatternFX</em> from the main folder
 
 <img width="565" alt="Screen Shot 2023-08-16 at 11 57 50 PM" src="https://github.com/xshirl1027/Kaleideign-Graphics-Tool-FX/assets/12800360/880c7694-a1ca-43ff-874d-8dda3fd6930b">
