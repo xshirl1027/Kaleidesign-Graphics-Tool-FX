@@ -113,7 +113,7 @@ public class PatternFX extends Application {
 	}
 
 	public ChoiceBox<String> getEraserChooser(GraphicsContext graphicsContext) {
-		ChoiceBox<String> eraserChooser = new ChoiceBox<>(FXCollections.observableArrayList("Eraser Off", "Eraser 1", "Eraser 2", "Eraser 3"));
+		ChoiceBox<String> eraserChooser = new ChoiceBox<>(FXCollections.observableArrayList("Eraser Off", "Eraser 1", "Eraser 2", "Eraser 3", "Eraser 4"));
 		eraserChooser.getSelectionModel().selectFirst();
 
 		eraserChooser.getSelectionModel().selectedIndexProperty().addListener((ChangeListener) (ov, old, newval) -> {
