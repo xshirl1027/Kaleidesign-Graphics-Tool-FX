@@ -73,14 +73,23 @@ public class utilsFX {
 		return closest;
 	}
 
-	public static void rotateClearRect(GraphicsContext g, int nseg, int x, int y, int width, Point center, boolean mirrored){
+	public static void rotateClearRect(GraphicsContext g, int nseg, int x, int y, Point center, boolean mirrored){
 		g.save(); // Save the current graphics state
 		for(int i=0; i<=nseg; i++){
 			System.out.println(i);
 			g.translate(center.x, center.y);
 			g.rotate(i*360/nseg);
 			g.translate(-center.x, -center.y);
-			g.clearRect(x - width / 2, y - width / 2, width, width);
+			g.clearRect(x - g.getLineWidth()/2, 
+				 						 y - g.getLineWidth()/2, 
+				 						 g.getLineWidth(), 
+					g.getLineWidth());
+			if(mirrored){ //reflect the stroke within the segment
+				g.clearRect(center.x+(center.x - x) - g.getLineWidth()/2
+						, y - g.getLineWidth()/2, 
+						g.getLineWidth(), 
+						g.getLineWidth());
+			}
 			g.translate(center.x, center.y);
 			g.rotate(-i*360/nseg);
 			g.translate(-center.x, -center.y);
