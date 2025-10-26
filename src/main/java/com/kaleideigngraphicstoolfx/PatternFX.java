@@ -180,11 +180,11 @@ public class PatternFX extends Application {
 			
 			if (isErasing) {
 				// For erasing, clear to transparent
-				utilsFX.rotateClearRect(graphicsContext, 6, (int)(graphicsContext.getLineWidth()/2), center, mirror);
-				// graphicsContext.clearRect(x - graphicsContext.getLineWidth()/2, 
-				// 						 y - graphicsContext.getLineWidth()/2, 
-				// 						 graphicsContext.getLineWidth(), 
-				// 						 graphicsContext.getLineWidth());
+				//utilsFX.rotateClearRect(graphicsContext, 6, x,y,(int)(graphicsContext.getLineWidth()/2), center, mirror);
+				graphicsContext.clearRect(x - graphicsContext.getLineWidth()/2, 
+				 						 y - graphicsContext.getLineWidth()/2, 
+				 						 graphicsContext.getLineWidth(), 
+				 						 graphicsContext.getLineWidth());
 			} else {
 				// For drawing, draw normally
 				Line l = new Line(x, y, x, y);
