@@ -172,16 +172,28 @@ public class PatternFX extends Application {
 		return eraserChooser;
 	}
 
-	private Button getResetButton(GraphicsContext drawingGC){
+	private Button getResetButton(GraphicsContext drawingGC, ChoiceBox<String> colorChooser, 
+								  ChoiceBox<String> sizeChooser, ChoiceBox<String> eraserChooser, 
+								  Button mirrorButton){
 		Button resetButton = new Button("Reset");
 		resetButton.setOnAction(actionEvent -> {
 			// Only clear the drawing canvas (top layer) - this reveals the background guides
 			drawingGC.clearRect(0, 0, drawingGC.getCanvas().getWidth(),
 					drawingGC.getCanvas().getHeight());
+			
 			// Reset to drawing mode
 			isErasing = false;
 			drawingGC.setStroke(Color.BLACK);
 			drawingGC.setLineWidth(1);
+			
+			// Reset all selectors to their initial values
+			colorChooser.getSelectionModel().selectFirst(); // Black (index 0)
+			sizeChooser.getSelectionModel().selectFirst();  // Size 1 (index 0)
+			eraserChooser.getSelectionModel().selectFirst(); // Eraser Off (index 0)
+			
+			// Reset mirror to initial value
+			mirror = false;
+			mirrorButton.setText("Mirror: " + mirror);
 		});
 		resetButton.setTranslateX(10);
 		return resetButton;
@@ -255,13 +267,12 @@ public class PatternFX extends Application {
 		StackPane canvasStack = new StackPane();
 		canvasStack.getChildren().addAll(backgroundCanvas, drawingCanvas);
 
-		final Button resetButton = getResetButton(drawingGC);
-		final Button mirrorButton = getMirrorButton();
-
 		// Set up the controls - use drawing canvas context for drawing operations
 		ChoiceBox<String> sizeChooser = getSizeChooser(drawingGC);
 		ChoiceBox<String> colorChooser = getColorChooser(drawingGC, sizeChooser);
 		ChoiceBox<String> eraserChooser = getEraserChooser(drawingGC);
+		final Button mirrorButton = getMirrorButton();
+		final Button resetButton = getResetButton(drawingGC, colorChooser, sizeChooser, eraserChooser, mirrorButton);
 
 		HBox buttonBox = new HBox();
 		buttonBox.getChildren().addAll(colorChooser, sizeChooser, eraserChooser, resetButton, mirrorButton);
