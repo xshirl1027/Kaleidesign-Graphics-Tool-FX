@@ -194,12 +194,8 @@ public class PatternFX extends Application {
 
 		canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, (MouseEvent event) -> {
 			if (isErasing) {
-				// For erasing, clear rectangular areas to make transparent
-				double lineWidth = graphicsContext.getLineWidth();
-				graphicsContext.clearRect(event.getX() - lineWidth/2, 
-										 event.getY() - lineWidth/2, 
-										 lineWidth, 
-										 lineWidth);
+				// For erasing, use the same rotated clear pattern as the initial click
+				utilsFX.rotateClearRect(graphicsContext, 6, (int) event.getX(), (int) event.getY(), center, mirror);
 			} else {
 				// For drawing, draw lines normally
 				Line l = new Line(x, y, event.getX(), event.getY());
