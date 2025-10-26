@@ -39,7 +39,7 @@ public class PatternFX extends Application {
 	public static void main(String[] args) {
 		Application.launch(PatternFX.class, args);
 	}
-	public ChoiceBox<String> getColorChooser(GraphicsContext graphicsContext){
+	public ChoiceBox<String> getColorChooser(GraphicsContext graphicsContext, ChoiceBox<String> sizeChooser){
 		ChoiceBox<String> colorChooser = new ChoiceBox<>(
 				FXCollections.observableArrayList("Black", "Blue", "Red", "Green", "Brown", "Orange"));
 		// Select the first option by default
@@ -48,6 +48,7 @@ public class PatternFX extends Application {
 		colorChooser.getSelectionModel().selectedIndexProperty().addListener((ChangeListener) (ov, old, newval) -> {
 			Number idx = (Number) newval;
 			isErasing = false; // Set drawing mode
+			
 			Color newColor;
 			switch (idx.intValue()) {
 				case 0:
@@ -73,6 +74,29 @@ public class PatternFX extends Application {
 					break;
 			}
 			graphicsContext.setStroke(newColor);
+			
+			// Set line width based on current size chooser selection
+			int sizeIndex = sizeChooser.getSelectionModel().getSelectedIndex();
+			switch (sizeIndex) {
+				case 0:
+					graphicsContext.setLineWidth(1);
+					break;
+				case 1:
+					graphicsContext.setLineWidth(2);
+					break;
+				case 2:
+					graphicsContext.setLineWidth(3);
+					break;
+				case 3:
+					graphicsContext.setLineWidth(4);
+					break;
+				case 4:
+					graphicsContext.setLineWidth(5);
+					break;
+				default:
+					graphicsContext.setLineWidth(1);
+					break;
+			}
 
 		});
 		//colorChooser.setTranslateX(5);
@@ -235,8 +259,8 @@ public class PatternFX extends Application {
 		final Button mirrorButton = getMirrorButton();
 
 		// Set up the controls - use drawing canvas context for drawing operations
-		ChoiceBox<String> colorChooser = getColorChooser(drawingGC);
 		ChoiceBox<String> sizeChooser = getSizeChooser(drawingGC);
+		ChoiceBox<String> colorChooser = getColorChooser(drawingGC, sizeChooser);
 		ChoiceBox<String> eraserChooser = getEraserChooser(drawingGC);
 
 		HBox buttonBox = new HBox();
