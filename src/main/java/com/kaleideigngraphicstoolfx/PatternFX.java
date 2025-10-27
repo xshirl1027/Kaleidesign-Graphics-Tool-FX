@@ -27,7 +27,7 @@ public class PatternFX extends Application {
 
 	protected int x, y;
 
-	protected boolean mirror = false;
+	protected boolean mirror = true;
 	protected Point center = new Point(width/2, height/2);
 	protected boolean isErasing = false;
 
